@@ -121,12 +121,12 @@ function drawDuck(duck) {
   
   // Head (small circle on top)
   fill(colorScheme.head);
-  circle(0, -size * 0.35, size * 0.45);
+  circle(0, -size * 0.6, size * 0.8);
   
   // Eyes (pusheen style - closed happy eyes)
   fill(0);
-  ellipse(-size * 0.12, -size * 0.42, size * 0.12, size * 0.08);
-  ellipse(size * 0.12, -size * 0.42, size * 0.12, size * 0.08);
+  ellipse(-size * 0.12, -size * 0.42, size * 0.08, size * 0.08);
+  ellipse(size * 0.12, -size * 0.42, size * 0.08, size * 0.08);
   
   // Beak (rotated bracket)
   fill(colorScheme.beak);
@@ -144,8 +144,8 @@ function drawDuck(duck) {
   fill(colorScheme.beak);
   stroke(0);
   strokeWeight(1.5);
-  arc(-size * 0.18, size * 0.42, size * 0.25, size * 0.15, 0, PI);
-  arc(size * 0.18, size * 0.42, size * 0.25, size * 0.15, 0, PI);
+  arc(-size * 0.18, size * 0.42, size * 0.25, size * 0.15, 0, PI, TWO_PI, CHORD);
+  arc(size * 0.18, size * 0.42, size * 0.25, size * 0.15, 0, PI, TWO_PI, CHORD);
   
   // Hat
   drawHat(duck.hatType, size);
@@ -185,7 +185,7 @@ function drawHat(hatType, duckSize) {
     rect(-duckSize * 0.2, hatY - duckSize * 0.3, duckSize * 0.4, duckSize * 0.25);
     
     // Middle band (red)
-    fill(255, 0, 0);
+    fill(0);
     noStroke();
     rect(-duckSize * 0.2, hatY - duckSize * 0.1, duckSize * 0.4, duckSize * 0.08);
   } else if (hatType === 2) {
@@ -253,25 +253,7 @@ function drawPlainGrass(height) {
   fill(100, 150, 75);
   stroke(80, 120, 60);
   strokeWeight(1);
-  
-  // Draw grass blades
-  for (let x = 0; x < width; x += 15) {
-    const bladeWidth = random(3, 6);
-    drawGrassBlade(x, height, bladeWidth);
-  }
-}
-
-function drawGrassBlade(x, height, width) {
-  beginShape();
-  const baseY = height;
-  const tipY = height - random(30, 50);
-  const curveAmount = random(-5, 5);
-  
-  bezier(x - width/2, baseY, x - width + curveAmount, tipY - 10, 
-         x + curveAmount - 2, tipY - 5, x + width/2, baseY);
-  bezier(x + width/2, baseY, x + width + curveAmount, tipY - 8, 
-         x + curveAmount + 2, tipY - 3, x - width/2, baseY);
-  endShape(CLOSE);
+  circle(windowWiidth / 2, windowHeight * 2.5, windowWidth * 3, windowWidth * 3);
 }
 
 function drawFlowers() {
