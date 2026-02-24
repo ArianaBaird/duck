@@ -121,17 +121,17 @@ function drawDuck(duck) {
   
   // Head (small circle on top)
   fill(colorScheme.head);
-  circle(0, -size * 0.6, size * 0.8);
+  circle(0, -size * 0.6, size * 0.6);
   
   // Eyes (pusheen style - closed happy eyes)
   fill(0);
-  ellipse(-size * 0.12, -size * 0.42, size * 0.08, size * 0.08);
-  ellipse(size * 0.12, -size * 0.42, size * 0.08, size * 0.08);
+  ellipse(-size * 0.12, -size * 0.5, size * 0.08, size * 0.08);
+  ellipse(size * 0.12, -size * 0.5, size * 0.08, size * 0.08);
   
   // Beak (rotated bracket)
   fill(colorScheme.beak);
   noStroke();
-  drawBeak(0, -size * 0.25, size * 0.2);
+  drawBeak(0, -size * 0.33, size * 0.2);
   
   // Wings (half circles on sides)
   fill(colorScheme.body);
