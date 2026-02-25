@@ -175,7 +175,7 @@ function drawHat(hatType, duckSize) {
     
     // Yellow pom pom
     fill(255, 255, 0);
-    stroke();
+    stroke(0);
     strokeWeight(1);
     circle(0, hatY - duckSize * 0.38, duckSize * 0.15);
   } else if (hatType === 1) {
