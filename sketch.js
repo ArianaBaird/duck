@@ -132,7 +132,7 @@ function drawDuck(duck) {
   fill(colorScheme.beak);
   stroke(0);
   strokeWeight(1.5);
-  arc(0, -size * 0.3, size * 0.25, size * 0.15, 0, PI, CHORD);
+  arc(0, -size * 0.4, size * 0.25, size * 0.15, 0, PI, CHORD);
   
   // Wings (half circles on sides)
   fill(colorScheme.body);
