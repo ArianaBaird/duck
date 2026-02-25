@@ -183,12 +183,16 @@ function drawHat(hatType, duckSize) {
     fill(0); // Black
     stroke(0);
     strokeWeight(1);
-    rect(-duckSize * 0.2, hatY - duckSize * 0.3, duckSize * 0.4, duckSize * 0.25);
+    // Cap rounded part
+    arc(0, hatY - duckSize * 0.1, duckSize * 0.4, duckSize * 0.2, PI, TWO_PI);
+    fill(255, 0 , 0); // Red band
+    rect(-duckSize * 0.2, hatY - duckSize * 0.1, duckSize * 0.4, duckSize * 0.1);
     
-    // Middle band (red)
-    fill(255, 0, 0);
-    noStroke();
-    rect(-duckSize * 0.2, hatY - duckSize * 0.1, duckSize * 0.4, duckSize * 0.08);
+    // Visor
+    fill(0);
+    stroke(0);
+    strokeWeight(1);
+    arc(0, hatY, duckSize * 0.5, duckSize * 0.08, 0, PI);
   } else if (hatType === 2) {
     // Baseball cap
     fill(0, 100, 255); // Blue
@@ -202,7 +206,7 @@ function drawHat(hatType, duckSize) {
     fill(0,100,255);
     stroke(0);
     strokeWeight(1);
-    arc(0, hatY, duckSize * 0.5, duckSize * 0.08, 0, PI);
+    arc(0, hatY, duckSize * 0.4, duckSize * 0.08, 0, PI);
   } else if (hatType === 3) {
     // Winter hat/Tuke (red pompom hat)
     fill(200, 0, 0); // Red
