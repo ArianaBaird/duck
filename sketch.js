@@ -199,7 +199,7 @@ function drawHat(hatType, duckSize) {
     stroke(0);
     strokeWeight(1);
     // Cap rounded part
-    arc(0, hatY - duckSize * 0.1, duckSize * 0.4, duckSize * 0.2, PI, TWO_PI);
+    arc(0, hatY - duckSize * 0.1, duckSize * 0.4, duckSize * 0.2, PI, TWO_PI, OPEN);
     rect(-duckSize * 0.2, hatY - duckSize * 0.11, duckSize * 0.4, duckSize * 0.1);
     
     // Visor
