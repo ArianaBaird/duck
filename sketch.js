@@ -188,7 +188,7 @@ function drawHat(hatType, duckSize) {
     fill(255, 0 , 0); // Red band
     rect(-duckSize * 0.2, hatY - duckSize * 0.1, duckSize * 0.4, duckSize * 0.1);
     
-    // Visor
+    // Bottom brim
     fill(0);
     stroke(0);
     strokeWeight(1);
@@ -200,13 +200,13 @@ function drawHat(hatType, duckSize) {
     strokeWeight(1);
     // Cap rounded part
     arc(0, hatY - duckSize * 0.1, duckSize * 0.4, duckSize * 0.2, PI, TWO_PI);
-    rect(-duckSize * 0.2, hatY - duckSize * 0.1, duckSize * 0.4, duckSize * 0.1);
+    rect(-duckSize * 0.2, hatY - duckSize * 0.11, duckSize * 0.4, duckSize * 0.1);
     
     // Visor
     fill(0,100,255);
     stroke(0);
     strokeWeight(1);
-    arc(0, hatY, duckSize * 0.4, duckSize * 0.08, 0, PI);
+    arc(0, hatY - duckSize * 0.01, duckSize * 0.4, duckSize * 0.08, 0, PI);
   } else if (hatType === 3) {
     // Winter hat/Tuke (red pompom hat)
     fill(200, 0, 0); // Red
