@@ -130,8 +130,9 @@ function drawDuck(duck) {
   
   // Beak (rotated bracket)
   fill(colorScheme.beak);
-  noStroke();
-  drawBeak(0, -size * 0.25, size * 0.2);
+  stroke(0);
+  strokeWeight(1.5);
+  arc(0, 0, size * 0.25, size * 0.15, 0, PI, CHORD);
   
   // Wings (half circles on sides)
   fill(colorScheme.body);
