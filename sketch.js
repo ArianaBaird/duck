@@ -206,7 +206,7 @@ function drawHat(hatType, duckSize) {
     fill(0,100,255);
     stroke(0);
     strokeWeight(1);
-    arc(0, hatY - duckSize * 0.01, duckSize * 0.4, duckSize * 0.08, 0, PI);
+    arc(0, hatY - duckSize * 0.01, duckSize * 0.4, duckSize * 0.15, 0, PI);
   } else if (hatType === 3) {
     // Winter hat/Tuke (red pompom hat)
     fill(200, 0, 0); // Red
