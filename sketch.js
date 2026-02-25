@@ -35,7 +35,7 @@ arc(size * 0.18, size * 0.42, size * 0.25, size * 0.15, 0, PI, TWO_PI, CHORD);
 drawHat(duck.hatType, size);
 
 pop();
-}
+
 
 function drawBeak(x, y, size) {
 // Draw a bracket-like beak rotated 90 degrees
