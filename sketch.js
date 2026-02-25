@@ -125,8 +125,8 @@ function drawDuck(duck) {
   
   // Eyes (pusheen style - closed happy eyes)
   fill(0);
-  ellipse(-size * 0.12, -size * 0.42, size * 0.12, size * 0.08);
-  ellipse(size * 0.12, -size * 0.42, size * 0.12, size * 0.08);
+  ellipse(-size * 0.12, -size * 0.42, size * 0.08, size * 0.08);
+  ellipse(size * 0.12, -size * 0.42, size * 0.08, size * 0.08);
   
   // Beak (rotated bracket)
   fill(colorScheme.beak);
