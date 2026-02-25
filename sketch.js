@@ -175,7 +175,8 @@ function drawHat(hatType, duckSize) {
     
     // Yellow pom pom
     fill(255, 255, 0);
-    noStroke();
+    stroke();
+    strokeWeight(1);
     circle(0, hatY - duckSize * 0.38, duckSize * 0.15);
   } else if (hatType === 1) {
     // Top hat
@@ -194,7 +195,7 @@ function drawHat(hatType, duckSize) {
     stroke(0);
     strokeWeight(1);
     // Cap rounded part
-    arc(0, hatY, duckSize * 0.4, duckSize * 0.2, PI, TWO_PI);
+    arc(0, hatY - duckSize * 0.1, duckSize * 0.4, duckSize * 0.2, PI, TWO_PI);
     rect(-duckSize * 0.2, hatY, duckSize * 0.4, duckSize * 0.1);
     
     // Visor
