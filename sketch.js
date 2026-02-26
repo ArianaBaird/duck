@@ -154,15 +154,6 @@ function drawDuck(duck) {
   pop();
 }
 
-function drawBeak(x, y, size) {
-  // Draw a bracket-like beak rotated 90 degrees
-  beginShape();
-  vertex(x + size, y - size * 0.4);
-  vertex(x + size * 0.3, y - size * 0.4);
-  vertex(x + size * 0.3, y);
-  vertex(x + size, y);
-  endShape();
-}
 
 function drawHat(hatType, duckSize) {
   const hatY = -duckSize * 0.85;
