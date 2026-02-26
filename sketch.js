@@ -366,20 +366,13 @@ function triggerParty() {
   }
   
   // Play party sound (simple beep)
-  playPartySound();
+  partyBlower.play();
 }
 
-function playPartySound() {
+function preloadParty() {
   // Create a simple beep using oscillator
-  try {
-    const osc = new p5.Oscillator('sine');
-    osc.freq(800);
-    osc.amp(0.1);
-    osc.start();
-    setTimeout(() => osc.stop(), 100);
-  } catch(e) {
-    // Sound might not be available
-  }
+  soundFormats('mp3')
+  partyBlower = loudSound('u_a9w845fdm3-partyblower-226659.mp3')
 }
 
 function playQuackSound() {
