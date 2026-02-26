@@ -125,14 +125,14 @@ function drawDuck(duck) {
   
   // Eyes (pusheen style - closed happy eyes)
   fill(0);
-  ellipse(-size * 0.15, -size * 0.42, size * 0.08, size * 0.08);
-  ellipse(size * 0.15, -size * 0.42, size * 0.08, size * 0.08);
+  ellipse(-size * 0.15, -size * 0.67, size * 0.08, size * 0.08);
+  ellipse(size * 0.15, -size * 0.67, size * 0.08, size * 0.08);
   
   // Beak (rotated bracket)
   fill(colorScheme.beak);
   stroke(0);
   strokeWeight(1.5);
-  arc(0, -size * 0.35, size * 0.25, size * 0.15, 0, PI, CHORD);
+  arc(0, -size * 0.6, size * 0.25, size * 0.15, 0, PI, CHORD);
   
   // Wings (half circles on sides)
   fill(colorScheme.body);
@@ -165,7 +165,7 @@ function drawBeak(x, y, size) {
 }
 
 function drawHat(hatType, duckSize) {
-  const hatY = -duckSize * 0.55;
+  const hatY = -duckSize * 0.8;
   
   if (hatType === 0) {
     // Party hat
