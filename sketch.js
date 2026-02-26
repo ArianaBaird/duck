@@ -165,7 +165,7 @@ function drawBeak(x, y, size) {
 }
 
 function drawHat(hatType, duckSize) {
-  const hatY = -duckSize * 0.8;
+  const hatY = -duckSize * 0.85;
   
   if (hatType === 0) {
     // Party hat
