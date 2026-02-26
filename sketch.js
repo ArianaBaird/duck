@@ -367,26 +367,16 @@ function triggerParty() {
   }
   
   // Play party sound (simple beep)
-  playpartyBlower.loop();
+  playpartyBlower.play();
 }
 
-function partyBlower() {
-  // Create a simple beep using oscillator
+function preload() {
   soundFormats('mp3')
-  playpartyBlower = loudSound('u_a9w845fdm3-partyblower-226659.mp3')
+  playpartyBlower = loadSound('u_a9w845fdm3-partyblower-226659.mp3')
+  quack = loadSound('freesound_community-075176_duck-quack-40345.mp3')
 }
 
-function playQuackSound() {
-  try {
-    const osc = new p5.Oscillator('sine');
-    osc.freq(300 + random(-50, 50));
-    osc.amp(0.15);
-    osc.start();
-    setTimeout(() => osc.stop(), 150);
-  } catch(e) {
-    // Sound might not be available
-  }
-}
+
 
 // Confetti class
 class Confetti {
@@ -496,7 +486,7 @@ function mousePressed() {
   for (let duck of ducks) {
     const distance = dist(mouseX, mouseY, duck.x, duck.y);
     if (distance < duck.size / 2) {
-      playQuackSound();
+      quack.play();
       return false;
     }
   }
