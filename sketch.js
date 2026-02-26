@@ -369,7 +369,7 @@ function triggerParty() {
   partyBlower.play();
 }
 
-function preloadParty() {
+function partyBlower() {
   // Create a simple beep using oscillator
   soundFormats('mp3')
   partyBlower = loudSound('u_a9w845fdm3-partyblower-226659.mp3')
