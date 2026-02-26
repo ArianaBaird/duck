@@ -367,13 +367,13 @@ function triggerParty() {
   }
   
   // Play party sound (simple beep)
-  partyBlower.play();
+  playpartyBlower.play();
 }
 
-function preload() {
+function partyBlower() {
   // Create a simple beep using oscillator
   soundFormats('mp3')
-  partyBlower = loudSound('u_a9w845fdm3-partyblower-226659.mp3')
+  playpartyBlower = loudSound('u_a9w845fdm3-partyblower-226659.mp3')
 }
 
 function playQuackSound() {
