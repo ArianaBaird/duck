@@ -7,7 +7,7 @@ let currentDuckColor = 0; // 0: white goose, 1: Canadian goose, 2: yellow, 3: ma
 let currentGrassType = 0; // 0: none, 1: plain, 2: flowers, 3: muddy puddle, 4: pond
 let quackSound, partySound;
 let baseDuckSize;
-let partyBlower;
+let playpartyBlower;
 
 // Hat types array
 const HAT_TYPES = ['party', 'tophat', 'baseball', 'winter'];
