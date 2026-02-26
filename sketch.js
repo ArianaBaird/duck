@@ -121,7 +121,7 @@ function drawDuck(duck) {
   
   // Head (small circle on top)
   fill(colorScheme.head);
-  circle(0, -size * 0.65, size * 0.8);
+  circle(0, -size * 0.65, size * 0.7);
   
   // Eyes (pusheen style - closed happy eyes)
   fill(0);
