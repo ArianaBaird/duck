@@ -367,7 +367,7 @@ function triggerParty() {
   }
   
   // Play party sound (simple beep)
-  playpartyBlower.play();
+  playpartyBlower.loop();
 }
 
 function partyBlower() {
