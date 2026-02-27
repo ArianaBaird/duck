@@ -3,7 +3,7 @@ let ducks = [];
 let confetti = [];
 let isMoving = false;
 let currentHatType = 0; // 0: party, 1: top hat, 2: baseball cap, 3: winter hat
-let currentDuckColor = 0; // 0: white goose, 1: Canadian goose, 2: yellow, 3: mallard
+let currentDuckColor = 0; // 0: white goose, 1: yellow, 2: mallard
 let currentGrassType = 0; // 0: none, 1: plain, 2: flowers, 3: muddy puddle, 4: pond
 let quackSound, partySound;
 let baseDuckSize;
@@ -14,10 +14,9 @@ const HAT_TYPES = ['party', 'tophat', 'baseball', 'winter'];
 
 // Duck color presets
 const DUCK_COLORS = {
-  whiteGoose: { body: [240, 245, 250], head: [240, 245, 250], eye: [20, 20, 20], beak: [255, 140, 0] },
-  canadianGoose: { body: [40, 40, 40], head: [40, 40, 40], eye: [255, 255, 255], beak: [255, 100, 0] },
-  yellow: { body: [255, 220, 0], head: [255, 220, 0], eye: [20, 20, 20], beak: [255, 100, 0] },
-  mallard: { body: [100, 140, 80], head: [20, 80, 60], eye: [255, 255, 255], beak: [255, 140, 0] }
+  whiteGoose: { body: [240, 245, 250], head: [240, 245, 250], eye: [20, 20, 20], beak: [255, 140, 0], wings: [240, 245, 250] },
+  yellow: { body: [255, 220, 0], head: [255, 220, 0], eye: [20, 20, 20], beak: [255, 100, 0], wings: [255, 220, 0] },
+  mallard: { body: [100, 140, 80], head: [20, 80, 60], eye: [255, 255, 255], beak: [255, 140, 0], wings: [100, 140, 80] }
 };
 
 // Grass types
@@ -25,7 +24,7 @@ const GRASS_TYPES = ['none', 'plain', 'flowers', 'muddypuddle', 'pond'];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  baseDuckSize = windowWidth / 8;
+  baseDuckSize = windowWidth / 10;
   
   // Create initial duck
   addDuck();
@@ -41,7 +40,7 @@ function addDuck() {
     vy: 0,
     rotation: 0,
     targetRotation: 0,
-    speed: 2,
+    speed: 3,
     size: baseDuckSize,
     hatType: currentHatType,
     colorType: currentDuckColor
@@ -136,18 +135,18 @@ function drawDuck(duck) {
   arc(0, -size * 0.6, size * 0.25, size * 0.15, 0, PI, CHORD);
   
   // Wings (half circles on sides)
-  fill(colorScheme.body);
+  fill(colorScheme.wings);
   stroke(0);
   strokeWeight(1.5);
-  arc(-size * 0.35, 0, size * 0.35, size * 0.3, PI/2, 3*PI/2, CHORD);
-  arc(size * 0.35, 0, size * 0.35, size * 0.3, PI/2, 3*PI/2, CHORD);
+  arc(-size * 0.35, 0, size * 0.35, size * 0.4, PI/2, 3*PI/2, CHORD);
+  arc(size * 0.35, 0, size * 0.35, size * 0.4, - PI/2, - 3*PI/2, CHORD);
   
   // Feet (half circles at bottom, flat side down)
   fill(colorScheme.beak);
   stroke(0);
   strokeWeight(1.5);
-  arc(-size * 0.18, size * 0.42, size * 0.25, size * 0.15, 0, PI);
-  arc(size * 0.18, size * 0.42, size * 0.25, size * 0.15, 0, PI);
+  arc(-size * 0.18, size * 0.5, size * 0.22, size * 0.15, PI / 2 * 2, PI/2 * 4, CHORD);
+  arc(size * 0.18, size * 0.5, size * 0.22, size * 0.15, PI / 2 * 2, PI/2 * 4, CHORD);
   
   // Hat
   drawHat(duck.hatType, size);
@@ -206,21 +205,22 @@ function drawHat(hatType, duckSize) {
     stroke(0);
     strokeWeight(1);
     // Knit part
-    arc(0, hatY, duckSize * 0.35, duckSize * 0.25, PI, TWO_PI);
-    
+    arc(0, hatY , duckSize * 0.4, duckSize * 0.45, PI, TWO_PI, CHORD);
+    rect(-duckSize * 0.21, hatY - duckSize * 0.1, duckSize * 0.42, duckSize * 0.1, 10);
+   
     // Pom pom
     fill(255, 255, 255);
-    noStroke();
-    circle(0, hatY - duckSize * 0.15, duckSize * 0.12);
+    stroke(0);
+    strokeWeight(1);
+    circle(0, hatY - duckSize * 0.25, duckSize * 0.12);
   }
 }
 
 function getDuckColors(colorType) {
   switch(colorType) {
     case 0: return DUCK_COLORS.whiteGoose;
-    case 1: return DUCK_COLORS.canadianGoose;
-    case 2: return DUCK_COLORS.yellow;
-    case 3: return DUCK_COLORS.mallard;
+    case 1: return DUCK_COLORS.yellow;
+    case 2: return DUCK_COLORS.mallard;
     default: return DUCK_COLORS.whiteGoose;
   }
 }
